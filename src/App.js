@@ -7,15 +7,16 @@ import FormWrapper from './components/FormWrapper';
 import MyContext from './context/context';
 
 function App() {
-  return (
-    <div className="App">
-        <MyContext.Provider value={"context value"}>
-            <Wrapper>
-                <Navbar/>
-                <FormWrapper/>
-            </Wrapper>
-        </MyContext.Provider>
-    </div>
+    const [ name, setName ] = useState('Blank Username');
+    return (
+        <div className="App">
+            <MyContext.Provider value={[name,setName]}>
+                <Wrapper>
+                    <Navbar />
+                    <FormWrapper/>
+                </Wrapper>
+            </MyContext.Provider>
+        </div>
 );
 }
 
